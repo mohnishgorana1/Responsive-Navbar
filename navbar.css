@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+
+    overflow: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+.nav-links{
+    color:black;
+    font-size: large;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+.nav-links:hover{
+    color:#364fc7;
+}
+h1{
+    /* border:1px solid red; */
+    font-size: 2.5rem;
+    border-radius: 8px;
+    color:#ffffff;
+    padding: 0.8rem 1.6rem;
+    background-color: #000000;
+}
+li{
+    padding: 10px;
+
+}
+.section{
+    
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+.section-hero{
+    background-color: rgba(255, 255, 0, 0.568);
+}
+.section-services{
+    background-color: rgba(181, 79, 48, 0.568);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4.8rem;
+    height: 10rem;
+    background-color: #9bd4ea;
+}
+.navbar{
+    display: flex;
+    align-items: center ;
+
+}
+.navbar .nav-list{
+    display: flex;
+    align-items: center ;
+    justify-content: space-around;
+    gap:2rem;
+}
+/* 
+<div class="mobile-navbar-btn">
+
+    <i class="fa-sharp fa-solid fa-bars mobile-nav-icon menu-btn"></i>
+
+    <i class="fa-sharp fa-solid fa-xmark mobile-nav-icon close-btn"></i>
+
+</div> */
+
+.mobile-nav-icon{
+    padding: 2rem;
+    font-size: 4rem;
+    color:#212529;
+
+}
+.mobile-navbar-btn{
+    /* display: none; */
+    background-color: transparent;
+    cursor: pointer;
+}
+.mobile-navbar-btn .close-btn{
+    display: none;
+    
+}
+
+/* media query 980px*/
+/*! 1em = 16px  => ?em = 980px => 980/16 => 61.25em */
+
+@media (max-width :62rem){
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 9990;
+        border:1px solid black;
+        border-radius: 0.5rem;
+
+    }
+    .mobile-nav-icon{
+        font-size: 2rem;
+        padding: 1.2rem;
+
+    }
+    .header{
+        /* ! */
+        position: relative;
+    }
+    .header h1{
+        font-size: 2rem;
+    }
+    .navbar {
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background-color: #c1a9d1;
+        /* ! */
+        position: absolute;
+        top:0;
+        left:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* transition */
+        transform : translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .nav-list{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* ! agr active class present h to navbar ko dikha do nhi to mt dikhao */
+    /* * or active class ko add krenge js se */
+    .active .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* ! agr active class present h to fir navbar me close btn dikh do or menu btn ko close kr do*/
+    .active .mobile-navbar-btn .close-btn{
+        display: block;
+    }
+    .active .mobile-navbar-btn .menu-btn{
+        display: none;
+    }
+}
+@media (max-width :35em){
+    .header h1{
+        padding: 0.5 2.4rem;
+        font-size: 1.5rem;
+    }
+}
